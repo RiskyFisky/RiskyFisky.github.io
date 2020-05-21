@@ -1,0 +1,20 @@
+---
+title: "Coursera Data Products Assignment"
+author: "Jack Fiskum"
+date: "5/21/2020"
+output: html_document
+---
+
+```{r setup, echo=FALSE}
+library(leaflet)
+
+mayoicon <- makeIcon(iconUrl = "https://upload.wikimedia.org/wikipedia/en/7/76/Mayo-clinic-logo.png",
+                     iconWidth = 96,
+                     iconHeight = 128)
+
+mymap <- leaflet() %>% addTiles() %>% addMarkers(lat = c(44.0222, 30.264330, 33.659370), 
+                                                 lng = c(-92.4666, -81.437347, -111.956299), 
+                                                 popup = c("Mayo Clinic: Rochester", "Mayo Clinic: Jacksonville", "Mayo Clinic: Pheonix"), 
+                                                 icon=mayoicon)
+mymap
+```
